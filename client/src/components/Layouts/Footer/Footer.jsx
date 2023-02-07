@@ -140,7 +140,6 @@ const Footer = () => {
             <div className="border-gray-600 h-36 w-1 border-l mr-5 mt-6 hidden sm:block"></div>
             <div className="w-full sm:w-5/12 my-6 mx-5 sm:mx-0 flex flex-col sm:flex-row gap-2 sm:gap-0 justify-between">
               <div className="w-full sm:w-1/2">
-                
                 <h2 className="text-primary-grey">Mail Us:</h2>
                 <p className="mt-2 leading-5">Flipkart Internet Private Limited,<br />
                   Buildings Alyssa, Begonia &<br />

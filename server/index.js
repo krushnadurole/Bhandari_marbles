@@ -1,11 +1,15 @@
-const dontenv = require('dotenv')
-const express = require('express')
+const app = require('./app');
+const connectDatabase = require('./config/database');
 const cloudinary = require('cloudinary');
-const app = require('./app')
-const connecToDatabase = require('./Config/database')
+const PORT = process.env.PORT || 4000;
 
-// // setting config file. 
-dontenv.config({path:"../server/Config/config.env"})
+// UncaughtException Error
+process.on('uncaughtException', (err) => {
+    console.log(`Error: ${err.message}`);
+    process.exit(1);
+});
+
+connectDatabase();
 
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_NAME,
@@ -13,23 +17,14 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-process.on('uncaughtException',err=>{
-    console.log(`Error : ${err.message}`)
-    console.log(`Shutting down the server due to uncaught exceptions`)
-    process.exit(1);
-})
+const server = app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`)
+});
 
-connecToDatabase();
-
-const server = app.listen(process.env.PORT,()=>{
-    console.log(`Server started on Port : ${process.env.PORT} in ${process.env.NODE_ENV} MODE`)
-})
-
-
-process.on('unhandledRejection',err=>{
-    console.log(`Error : ${err.message}`)
-    console.log('Shutting down the server due to unhandle promise rejection')
-    server.close(()=>{
+// Unhandled Promise Rejection
+process.on('unhandledRejection', (err) => {
+    console.log(`Error: ${err.message}`);
+    server.close(() => {
         process.exit(1);
-    })
-})
+    });
+});

@@ -51,7 +51,7 @@ export const loginUser = (email, password) => async (dispatch) => {
         }
 
         const { data } = await axios.post(
-            'http://localhost:4000/api/v1/login',
+            '/api/v1/login',
             { email, password },
             config
         );
@@ -86,7 +86,7 @@ export const registerUser = (userData) => async (dispatch) => {
             userData,
             config
         );
-        console.log(data);
+
         dispatch({
             type: REGISTER_USER_SUCCESS,
             payload: data.user,
@@ -124,7 +124,7 @@ export const loadUser = () => async (dispatch) => {
 // Logout User
 export const logoutUser = () => async (dispatch) => {
     try {
-        await axios.get('http://localhost:4000/api/v1/logout');
+        await axios.get('/api/v1/logout');
         dispatch({ type: LOGOUT_USER_SUCCESS });
     } catch (error) {
         dispatch({

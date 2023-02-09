@@ -6,7 +6,6 @@ const sendEmail = require('../utils/sendEmail');
 
 // Create New Order
 exports.newOrder = asyncErrorHandler(async (req, res, next) => {
-
     const {
         shippingInfo,
         orderItems,
@@ -15,7 +14,7 @@ exports.newOrder = asyncErrorHandler(async (req, res, next) => {
     } = req.body;
 
     const orderExist = await Order.findOne({ paymentInfo });
-
+    
     if (orderExist) {
         return next(new ErrorHandler("Order Already Placed", 400));
     }
@@ -121,6 +120,7 @@ exports.updateOrder = asyncErrorHandler(async (req, res, next) => {
     }
 
     order.orderStatus = req.body.status;
+    
     if (req.body.status === "Delivered") {
         order.deliveredAt = Date.now();
     }

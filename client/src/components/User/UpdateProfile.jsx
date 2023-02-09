@@ -64,14 +64,13 @@ const UpdateProfile = () => {
             enqueueSnackbar("Profile Updated Successfully", { variant: "success" });
             dispatch(loadUser());
             navigate('/account');
-
             dispatch({ type: UPDATE_PROFILE_RESET });
         }
     }, [dispatch, error, user, isUpdated, navigate, enqueueSnackbar]);
 
     return (
         <>
-            <MetaData title="Update Profile | Flipkart" />
+            <MetaData title="Update Profile | Bhandari  Marbles" />
 
             {loading && <BackdropLoader />}
             <main className="w-full mt-12 sm:pt-20 sm:mt-0">

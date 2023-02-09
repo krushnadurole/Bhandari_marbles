@@ -1,0 +1,12 @@
+.vertical {
+    border-left: 6px solid black;
+    height: 200px;
+    position:absolute;
+    left: 50%;
+}
+
+
+.footer{
+    height: 100px;
+    background-color:rgb(5, 5, 53);
+}

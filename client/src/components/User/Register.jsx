@@ -84,8 +84,7 @@ const Register = () => {
 
     return (
         <>
-            <main>
-                <div className='whole'>
+            <main className='main'>
                     <div className='sidebar'>
                         <FormSidebar
                             title="Looks like you're new here!"
@@ -93,11 +92,11 @@ const Register = () => {
                         />
                     </div>
                     {/* Signup columsn */}
-                    <div className='flex'>
+                    <div>
                         {/* person info container */}
                         <form onSubmit={handleRegister} encType="multipart/form-data" className="p-5 sm:p-10">
                             {/* input container columns */}
-                            <div className=''>
+                            <div className='name gap-4'>
                                 <TextField
                                     fullWidth
                                     id="full_name"
@@ -106,6 +105,7 @@ const Register = () => {
                                     value={name}
                                     onChange={handleDataChange}
                                     required
+                                    className=''
                                 />
                                 <TextField
                                     fullWidth
@@ -116,6 +116,7 @@ const Register = () => {
                                     value={email}
                                     onChange={handleDataChange}
                                     required
+                                    className='name'
                                 />
 
                             </div>
@@ -145,6 +146,7 @@ const Register = () => {
                                 onChange={handleDataChange}
                                 required
                                 />
+                                &nbsp;
                                 <TextField 
                                 id="confirm_password"
                                 label="confirm password"
@@ -156,13 +158,6 @@ const Register = () => {
                             </div>
                             {/* end password container column/ */}
 
-                            {/* <div>
-                                <Avatar alt='Avatar Preview' />
-                                <label>
-                                    <input></input>
-                                    Choose File
-                                </label>
-                            </div> */}
                             <div className='avatar'>
                                     <Avatar
                                         alt="Avatar Preview"
@@ -171,7 +166,7 @@ const Register = () => {
                                     />
                                     <br /><br />
                                     &nbsp;
-                                    <button type="button" fullWidth class="btn btn-secondary">
+                                    <button type="button" fullWidth class="btn btnt btn-secondary">
                                         <input
                                            fullWidth
                                             type="file"
@@ -183,11 +178,10 @@ const Register = () => {
                                         Choose File
                                     </button>
                                 </div>
-                            <button>SignUp</button>
+                            <button className='btn btns btn-danger'>SignUp</button>
                             <Link></Link>
                         </form>
                     </div>
-                </div>
             </main>
 
         </>

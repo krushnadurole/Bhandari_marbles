@@ -1,0 +1,12 @@
+.avatar{
+    display: flex;
+    flex-direction: row;
+    margin: 1em;
+    vertical-align: middle;
+}
+
+.btn{
+    color: black;
+    width: 100%;
+    background-color: rgb(137, 132, 132);
+}

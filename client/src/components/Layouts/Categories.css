@@ -1,0 +1,20 @@
+.main{
+    /* overflow: hidden; */
+    display: block;
+    background-color: rgb(220, 194, 194);
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+.maini{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 6em;
+}
+
+.pro{
+    margin: 1em;
+    height: auto;
+}

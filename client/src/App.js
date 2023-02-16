@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Account from './components/User/Account';
 import Home from './components/Home/Home'
+import Categories from './components/Layouts/Categories';
 
 function App() {
 
@@ -41,7 +42,7 @@ function App() {
     });
   }, [pathname])
 
- 
+
 
   return (
     <>
@@ -56,17 +57,17 @@ function App() {
             <Account />
             </ProtectedRoute>
           } ></Route> */}
-        <Route path='/account' element={<Account/>}/>
+        <Route path='/account' element={<Account />} />
+        <Route path='/categories' element={<Categories />} />
 
         {/* <Route path="/account/update" element={
           <ProtectedRoute>
             <UpdateProfile />
           </ProtectedRoute>
         } ></Route>
-
+        
 
         <Route path="*" element={<NotFound />}></Route> */}
-
       </Routes>
     </>
   );

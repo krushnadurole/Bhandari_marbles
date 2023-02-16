@@ -40,7 +40,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearErrors, loginUser } from '../../actions/userAction';
 import { useSnackbar } from 'notistack';
-import BackdropLoader from '../Layouts/BackdropLoader';
+import BackdropLoader from '../Layouts/Loader';
 import MetaData from '../Layouts/MetaData';
 import AddShoppingCartRoundedIcon from '@mui/icons-material/AddShoppingCartRounded';
 import './Login.css'

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { Navigate, Link, useNavigate } from 'react-router-dom'
+import { Navigate, Link, useNavigate, json } from 'react-router-dom'
 import MetaData from '../Layouts/MetaData'
 
 
@@ -9,10 +9,13 @@ const Account = () => {
 
     const { user, loading, isAuthenticated } = useSelector(state => state.user)
 
+    console.log("hello"+isAuthenticated);
     useEffect(() => {
-        if (isAuthenticated === false) {
-            navigate("/login")
+        if (!isAuthenticated) {
+            navigate("/login");
         }
+        var it = JSON.parse(localStorage.getItem('userInfo'));
+        console.log("hello   " +it);
         console.log(user);
     }, [isAuthenticated, navigate])
 
@@ -24,8 +27,9 @@ const Account = () => {
     return (
         <>
             <MetaData title="My Profile" />
-
+            
             <main>
+                <Link to='/ProductSlider'>login</Link>
                 <div>
                 <div className="w-12 h-12 rounded-full">
                     <img  src={user.avatar.url} alt="Avatar" />

@@ -61,11 +61,21 @@ export const userReducer = (state = { user: {} }, { type, payload }) => {
                 user: payload,
             };
         case LOGOUT_USER_SUCCESS:
-            return {
-                loading: false,
-                user: null,
-                isAuthenticated: false,
-            };
+            if(localStorage.getItem('userInfo')){
+                return{
+                    loading:false,
+                    user:null,
+                    isAuthenticated:true
+                }
+            }
+            else{
+                return {
+                    loading: false,
+                    user: null,
+                    isAuthenticated: false,
+                };
+            }
+            
         case LOGIN_USER_FAIL:
         case REGISTER_USER_FAIL:
             return {

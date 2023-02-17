@@ -56,11 +56,15 @@ export const loginUser = (email, password) => async (dispatch) => {
             config
         );
 
+        console.log(data);
+        // const {authtoken} = data;
+        // localStorage.setItem('authtoken', data.authtoken);
+
         dispatch({
             type: LOGIN_USER_SUCCESS,
             payload: data.user,
         });
-
+        // localStorage.setItem('userInfo', JSON.stringify(data));
     } catch (error) {
         dispatch({
             type: LOGIN_USER_FAIL,
@@ -131,6 +135,8 @@ export const logoutUser = () => async (dispatch) => {
             type: LOGOUT_USER_FAIL,
             payload: error.response.data.message,
         });
+        localStorage.removeItem('userInfo');
+
     }
 };
 
@@ -156,6 +162,7 @@ export const updateProfile = (userData) => async (dispatch) => {
             type: UPDATE_PROFILE_SUCCESS,
             payload: data.success,
         });
+        localStorage.setItem('userInfo', JSON.stringify(data));
 
     } catch (error) {
         dispatch({
@@ -187,6 +194,7 @@ export const updatePassword = (passwords) => async (dispatch) => {
             type: UPDATE_PASSWORD_SUCCESS,
             payload: data.success,
         });
+        
 
     } catch (error) {
         dispatch({

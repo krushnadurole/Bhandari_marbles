@@ -39,6 +39,7 @@ const Home = () => {
             <Link to="/register" type="Link" className="btn btn-primary">SignUp</Link>
             <Link to="/account" type="Link" className="btn btn-primary">Account</Link>
             <Link to='/categories' type="Link" className="btn btn-primary">Categories</Link>
+            <Link to='/products' type="Link" className="btn btn-primary">products</Link>
             <Link className='logout'><LogoutRoundedIcon /></Link>
           </div>
 

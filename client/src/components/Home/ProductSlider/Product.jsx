@@ -37,17 +37,17 @@ const Product = (props) => {
         <div>
           {/* ratings badge  */}
           <span>
-            <span>{ratings.toFixed(1)}</span>
-            <span>{numOfReviews.toLocaleString()}</span>
+            {/* <span>{ratings.toFixed(1)}</span>
+            <span>{numOfReviews.toLocaleString()}</span> */}
           </span>
           {/* rating badge  */}
 
           {/* price container  */}
-          <div>
+          {/* <div>
             <span>₹{price.toLocaleString()}</span>
             <span >₹{cuttedPrice.toLocaleString()}</span>
             <span >{getDiscount(price, cuttedPrice)}%&nbsp;off</span>
-          </div>
+          </div> */}
           {/* price container  */}
         </div>
         {/* product description */}

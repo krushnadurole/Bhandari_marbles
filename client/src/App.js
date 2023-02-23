@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 import Account from './components/User/Account';
 import Home from './components/Home/Home'
 import Categories from './components/Layouts/Categories';
-
+import Products from './components/Products/Products';
 function App() {
 
   const dispatch = useDispatch();
@@ -52,7 +52,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path='/categories' element={<Categories />} />
-
+        <Route path='/products' element={<Products/>}/>
+        <Route path='/account' element={<Account/>}/>
 
 
 

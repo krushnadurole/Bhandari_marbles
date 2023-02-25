@@ -50,10 +50,9 @@ const Login = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { enqueueSnackbar } = useSnackbar();
+
     const location = useLocation();
-
     const { loading, isAuthenticated, error } = useSelector((state) => state.user);
-
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -62,9 +61,10 @@ const Login = () => {
         dispatch(loginUser(email, password));
     }
 
-    const redirect = location.search ? location.search.split("=")[1] : "account";
-
+    const redirect = location.search ? location.search.split("=")[1] : "";
+    
     useEffect(() => {
+       
         if (error) {
             enqueueSnackbar(error, { variant: "error" });
             dispatch(clearErrors());

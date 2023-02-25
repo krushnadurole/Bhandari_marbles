@@ -29,7 +29,8 @@ const Account = () => {
             <MetaData title="My Profile" />
             
             <main>
-                <Link to='/ProductSlider'>login</Link>
+                <Link to='/'>DashBoard</Link>
+                
                 <div>
                 <div className="w-12 h-12 rounded-full">
                     <img  src={user.avatar.url} alt="Avatar" />

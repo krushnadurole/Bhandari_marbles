@@ -56,15 +56,16 @@ export const loginUser = (email, password) => async (dispatch) => {
             config
         );
 
-        console.log(data);
+        console.log("gello",data);
         // const {authtoken} = data;
         // localStorage.setItem('authtoken', data.authtoken);
+
+        localStorage.setItem('userInfo', JSON.stringify(data));
 
         dispatch({
             type: LOGIN_USER_SUCCESS,
             payload: data.user,
         });
-        // localStorage.setItem('userInfo', JSON.stringify(data));
     } catch (error) {
         dispatch({
             type: LOGIN_USER_FAIL,

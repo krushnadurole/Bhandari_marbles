@@ -9,6 +9,7 @@ import Account from './components/User/Account';
 import Home from './components/Home/Home'
 import Categories from './components/Layouts/Categories';
 import Products from './components/Products/Products';
+import ProductDetails from './components/ProductDetails/ProductDetails';
 function App() {
 
   const dispatch = useDispatch();
@@ -54,6 +55,7 @@ function App() {
         <Route path='/categories' element={<Categories />} />
         <Route path='/products' element={<Products/>}/>
         <Route path='/account' element={<Account/>}/>
+        <Route path='/productdetails/:id' element={<ProductDetails/>}/>
 
 
 

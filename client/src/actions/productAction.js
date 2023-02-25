@@ -44,7 +44,7 @@ export const getProducts =
                 url = `http://localhost:4000/api/v1/products/all`;
             }
             const { data } = await axios.get(url);
-
+            console.log(data);
             dispatch({
                 type: ALL_PRODUCTS_SUCCESS,
                 payload: data,

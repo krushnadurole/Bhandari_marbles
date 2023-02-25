@@ -31,7 +31,7 @@ const Products = () => {
   return (
     <div>
      {products&&products.map((item)=>(
-      <Product/>
+      <Product data={item}/>
       ))}
     </div>
   )

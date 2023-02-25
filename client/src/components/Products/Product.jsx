@@ -1,8 +1,18 @@
 import React from 'react'
 
-const Product = () => {
+const Product = ({data}) => {
   return (
-    <div>Product</div>
+    <div>
+        {data.category}
+        {data.createAt}
+        {data.description}
+        {data.name}
+        {data.numOfReviews}
+        {data._id}
+        {data.stock}
+        product
+        <br /><br /><br /><br /><br />
+    </div>
   )
 }
 

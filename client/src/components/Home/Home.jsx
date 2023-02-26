@@ -9,16 +9,16 @@ import Prouductslider from './ProductSlider/Prouductslider';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSnackbar } from 'notistack';
 import { clearErrors, getSliderProducts } from '../../actions/productAction';
-import {logoutUser} from '../../actions/userAction'
+import { logoutUser } from '../../actions/userAction'
 import { Button } from '@mui/material';
 
 const Home = () => {
   const dispatch = useDispatch();
   const { enqueuesnackbar } = useSnackbar();
-  const {isAuthenticated, error, loading } = useSelector((state) => state.products);
+  const { isAuthenticated, error, loading } = useSelector((state) => state.products);
   const navigate = useNavigate();
-  const [done,setdone] = useState(false);
-  const logoutuser = ()=>{
+  const [done, setdone] = useState(false);
+  const logoutuser = () => {
     localStorage.removeItem('userInfo');
     // isAuthenticated = false;
     setdone(!done);
@@ -36,8 +36,8 @@ const Home = () => {
     // }
     // dispatch(getSliderProducts());
     // localStorage.getItem('userInfo')
-  }, [done,error, enqueuesnackbar]);
-  
+  }, [done, error, enqueuesnackbar]);
+
   return (
 
     <div className='home'>
@@ -50,13 +50,13 @@ const Home = () => {
           </div>
           <div className='nav mgt'>
             {
-              !localStorage.getItem('userInfo')&&
+              !localStorage.getItem('userInfo') &&
               <div> <Link to="/login" className='btn btn-primary' >Login</Link>
                 <Link to="/register" type="Link" className="btn btn-primary">SignUp</Link>
-                </div>
+              </div>
             }
             {
-              localStorage.getItem('userInfo')&&
+              localStorage.getItem('userInfo') &&
               <div>
                 <Link to="/account" type="Link" className="btn btn-primary">Account</Link>
                 <Link to='/categories' type="Link" className="btn btn-primary">Categories</Link>

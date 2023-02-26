@@ -35,6 +35,7 @@ import {
     ALL_USERS_FAIL,
     ALL_USERS_SUCCESS,
     ALL_USERS_REQUEST,
+    LOGOUT_USER
 } from '../constants/userConstants';
 import axios from 'axios';
 
@@ -55,11 +56,7 @@ export const loginUser = (email, password) => async (dispatch) => {
             { email, password },
             config
         );
-
-        console.log("gello",data);
-        // const {authtoken} = data;
-        // localStorage.setItem('authtoken', data.authtoken);
-
+            console.log(data);
         localStorage.setItem('userInfo', JSON.stringify(data));
 
         dispatch({
@@ -130,14 +127,15 @@ export const loadUser = () => async (dispatch) => {
 export const logoutUser = () => async (dispatch) => {
     try {
         await axios.get('http://localhost:4000/api/v1/logout');
+        localStorage.removeItem('userInfo');
+        console.log('action');
         dispatch({ type: LOGOUT_USER_SUCCESS });
     } catch (error) {
         dispatch({
             type: LOGOUT_USER_FAIL,
             payload: error.response.data.message,
         });
-        localStorage.removeItem('userInfo');
-
+        console.log('logout');
     }
 };
 

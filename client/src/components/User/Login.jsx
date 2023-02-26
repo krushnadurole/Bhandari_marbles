@@ -1,39 +1,3 @@
-// import React from 'react'
-// import { Link, useNavigate, useLocation } from 'react-router-dom'
-// import { useDispatch, useSelector } from 'react-redux';
-// import { clearErrors, loginuser } from '../../actions/userAction'
-// import { useSnackbar } from 'notistack';
-// import ButtonGroup from '@mui/material/ButtonGroup';
-// import Button from '@mui/material/Button';
-
-// // import BackdropLoader from '../Layouts/BackdropLoader';
-// import MetaData from '../Layouts/MetaData'
-// import BackdropLoader from '../Layouts/Loader';
-// const Login = () => {
-//     const dispatch = useDispatch();
-//     const navigate = useNavigate();
-//     const { enqueueSnackbar } = useSnackbar();
-//     const location = useLocation();
-//     const { loading, isAuthenticated, error } = useSelector((state) => state.user)
-//     return (
-//         <>
-//             <MetaData title="login | Flipkart" />
-//             {loading && <BackdropLoader />}
-//             <main>
-//                 <div>
-//                     <div>
-                        
-//                     </div>
-//                 </div>
-//             </main>
-//         </>
-//     )
-// }
-
-// export default Login
-
-
-
 import TextField from '@mui/material/TextField';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';

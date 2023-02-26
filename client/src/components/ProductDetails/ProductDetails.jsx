@@ -5,7 +5,6 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import Slider from 'react-slick';
 import { clearErrors, getProductDetails, getSimilarProducts, newReview } from '../../actions/productAction';
 import { NextBtn, PreviousBtn } from '../Home/Banner/Banner';
-// import ProductSlider from '../Home/ProductSlider/ProductSlider';
 import Loader from '../Layouts/Loader';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FlashOnIcon from '@mui/icons-material/FlashOn';

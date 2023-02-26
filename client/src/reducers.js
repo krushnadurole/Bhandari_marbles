@@ -1,7 +1,6 @@
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import persistConfig from './persistConfig';
-
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';

@@ -6,7 +6,6 @@ import { clearErrors, loginUser } from '../../actions/userAction';
 import { useSnackbar } from 'notistack';
 import BackdropLoader from '../Layouts/Loader';
 import MetaData from '../Layouts/MetaData';
-import AddShoppingCartRoundedIcon from '@mui/icons-material/AddShoppingCartRounded';
 import './Login.css'
 
 const Login = () => {

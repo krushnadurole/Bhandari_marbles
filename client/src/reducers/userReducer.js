@@ -40,6 +40,7 @@ import {
     DELETE_USER_RESET,
     DELETE_USER_FAIL,
     REMOVE_USER_DETAILS,
+    AUTHENTICATED
 } from '../constants/userConstants';
 
 export const userReducer = (state = { user: {} }, { type, payload }) => {
@@ -103,6 +104,11 @@ export const userReducer = (state = { user: {} }, { type, payload }) => {
                 ...state,
                 error: null,
             };
+        case AUTHENTICATED:
+            return{
+                ...state,
+                isAuthenticated:true
+            }
         default:
             return state;
     }

@@ -5,7 +5,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
 import { useSnackbar } from 'notistack';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, redirect, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearErrors, registerUser } from '../../actions/userAction';
 import BackdropLoader from '../Layouts/Loader';
@@ -56,6 +56,7 @@ const Register = () => {
         formData.set("avatar", avatar);
 
         dispatch(registerUser(formData));
+        redirect('/login')
     }
 
     const handleDataChange = (e) => {
@@ -82,9 +83,9 @@ const Register = () => {
             dispatch(clearErrors());
         }
         if (isAuthenticated) {
-            navigate('/')
+            navigate('/products')
         }
-    }, [dispatch, error, isAuthenticated, navigate, enqueueSnackbar]);
+    }, [navigate,localStorage.getItem('userInfo'),dispatch, error, isAuthenticated, navigate, enqueueSnackbar]);
 
     return (
         <>

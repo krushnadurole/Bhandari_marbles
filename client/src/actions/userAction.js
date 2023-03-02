@@ -35,7 +35,7 @@ import {
     ALL_USERS_FAIL,
     ALL_USERS_SUCCESS,
     ALL_USERS_REQUEST,
-    LOGOUT_USER
+    AUTHENTICATED
 } from '../constants/userConstants';
 import axios from 'axios';
 
@@ -71,6 +71,16 @@ export const loginUser = (email, password) => async (dispatch) => {
     }
 };
 
+export const authenticated = ()=>async(dispatch)=>{
+    try {
+        dispatch({type:AUTHENTICATED});
+    } catch (error) {
+        dispatch({
+            // type: LOAD_USER_FAIL,
+            payload: error.response.data.message,
+        });
+    }
+}
 // Register User
 export const registerUser = (userData) => async (dispatch) => {
     try {

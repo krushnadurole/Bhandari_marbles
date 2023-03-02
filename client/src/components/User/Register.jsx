@@ -7,7 +7,7 @@ import RadioGroup from '@mui/material/RadioGroup'
 import { useSnackbar } from 'notistack';
 import { Link, redirect, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { clearErrors, registerUser } from '../../actions/userAction';
+import { clearErrors, registerUser ,authenticated} from '../../actions/userAction';
 import BackdropLoader from '../Layouts/Loader';
 import MetaData from '../Layouts/MetaData';
 import FormSidebar from './FormSidebar';
@@ -56,6 +56,7 @@ const Register = () => {
         formData.set("avatar", avatar);
 
         dispatch(registerUser(formData));
+        dispatch(authenticated());
         redirect('/login')
     }
 

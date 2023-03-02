@@ -10,6 +10,10 @@ import Home from './components/Home/Home'
 import Categories from './components/Layouts/Categories';
 import Products from './components/Products/Products';
 import ProductDetails from './components/ProductDetails/ProductDetails';
+import ForgotPassword from './components/User/ForgotPassword';
+import ResetPassword from './components/User/ResetPassword';
+import UpdateProfile from './components/User/UpdateProfile';
+
 function App() {
 
   const dispatch = useDispatch();
@@ -56,6 +60,12 @@ function App() {
         <Route path='/products' element={<Products/>}/>
         <Route path='/account' element={<Account/>}/>
         <Route path='/productdetails/:id' element={<ProductDetails/>}/>
+        <Route path='/productdetails/:id' element={<ProductDetails/>}/>
+
+        <Route path="/password/forgot" element={<ForgotPassword />} />
+        <Route path="/password/reset/:token" element={< ResetPassword/>} />
+        <Route path="/password/reset/:token" element={< ResetPassword/>} />
+        <Route path="/account/update" element={< UpdateProfile/>} />
       </Routes>
     </>
   );

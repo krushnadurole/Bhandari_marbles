@@ -8,7 +8,6 @@ import furniture from '../../assets/images/Categories/furniture.png';
 import beauty from '../../assets/images/Categories/beauty.png';
 import grocery from '../../assets/images/Categories/grocery.png';
 import { Link } from 'react-router-dom';
-import './Categories.css'
 
 const catNav = [
     {
@@ -49,26 +48,24 @@ const catNav = [
     },
 ]
 
-
-
 const Categories = () => {
     return (
-        <section className='main'>
-            <div className='maini'>
-                {catNav.map((item, i) => {
-                    return  (
-                        <Link to={`/product?category=${item.name}`}  key={i} className="flex items-center justify-between ">
-                            <div className='pro'>
-                                <img  className='pro' src={item.icon} alt={item.name} />
-                            </div>
-                            <span>{item.name}</span>
-                        </Link>
-                    )
+        <section className="hidden sm:block bg-white mt-10 mb-4 min-w-full px-12 py-1 shadow overflow-hidden">
 
-                })}
+            <div className="flex items-center justify-between mt-4">
+
+                {catNav.map((item, i) => (
+                    <Link to={`/products?category=${item.name}`} className="flex flex-col gap-1 items-center p-2 group" key={i}>
+                        <div className="h-16 w-16">
+                            <img draggable="false" className="h-full w-full object-contain" src={item.icon} alt={item.name} />
+                        </div>
+                        <span className="text-sm text-gray-800 font-medium group-hover:text-primary-blue">{item.name}</span>
+                    </Link>
+                ))}
+
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Categories
+export default Categories;

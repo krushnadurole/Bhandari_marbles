@@ -6,7 +6,7 @@ import { settings } from '../DealSlider/DealSlider'
 import Product from './Product'
 import Slider from 'react-slick'
 
-const Prouductslider = ({title,tagline}) => {
+const ProuductSlider = ({title,tagline}) => {
   const {loading,products} = useSelector((state)=>state.products)
 
   return (
@@ -32,4 +32,4 @@ const Prouductslider = ({title,tagline}) => {
     )
 }
 
-export default Prouductslider
+export default ProuductSlider

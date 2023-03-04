@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { getRandomProducts } from '../../../utils/functions'
@@ -8,7 +8,10 @@ import Slider from 'react-slick'
 
 const ProuductSlider = ({title,tagline}) => {
   const {loading,products} = useSelector((state)=>state.products)
-
+  useEffect(() => {
+    console.log(products);
+  }, [])
+  
   return (
     <>
     <section>

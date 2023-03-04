@@ -60,12 +60,12 @@ import "slick-carousel/slick/slick-theme.css";
 import './Banner.css';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import gadgetSale from '../../../assets/images/Banners/gadget-sale.jpg';
-import kitchenSale from '../../../assets/images/Banners/kitchen-sale.jpg';
-import poco from '../../../assets/images/Banners/poco-m4-pro.webp';
-import realme from '../../../assets/images/Banners/realme-9-pro.webp';
-import fashionSale from '../../../assets/images/Banners/fashionsale.jpg';
-import oppo from '../../../assets/images/Banners/oppo-reno7.webp';
+import gadgetSale from '../../../assets/images/Banners/Alaska white 200.jpeg';
+import kitchenSale from '../../../assets/images/Banners/Black Pearl 90.jpeg';
+import poco from '../../../assets/images/Banners/classic granite 130.jpeg';
+import realme from '../../../assets/images/Banners/Classic lapotara 160.jpeg';
+import fashionSale from '../../../assets/images/Banners/Coffee brown 150.jpeg';
+import oppo from '../../../assets/images/Banners/Crystal yellow 120.jpeg';
 
 export const PreviousBtn = ({ className, onClick }) => {
   return (

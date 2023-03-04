@@ -27,11 +27,11 @@ const SecondaryDropDownMenu = () => {
             icon: <TrendingUpIcon sx={{ fontSize: "18px" }} />,
             redirect: "https://advertising.flipkart.com",
         },
-        {
-            title: "Download App",
-            icon: <DownloadIcon sx={{ fontSize: "18px" }} />,
-            redirect: "https://www.flipkart.com/mobile-apps",
-        },
+        // {
+        //     title: "Download App",
+        //     icon: <DownloadIcon sx={{ fontSize: "18px" }} />,
+        //     redirect: "https://www.flipkart.com/mobile-apps",
+        // },
     ]
 
     return (

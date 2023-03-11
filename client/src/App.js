@@ -81,6 +81,7 @@
 //         // <Route path="/create" element={< Create/>} />
 
 import WebFont from 'webfontloader';
+
 import Footer from './components/Layouts/Footer/Footer';
 import Header from './components/Layouts/Header/Header';
 import Login from './components/User/Login';
@@ -119,7 +120,8 @@ import ReviewsTable from './components/Admin/ReviewsTable';
 import Wishlist from './components/Wishlist/Wihlist';
 import NotFound from './components/NotFound';
 import Dashboarde from './components/Home/Dashboard';
-import './components/Home/Home.css'
+// import './components/Home/Home.css'
+import Create from './components/Home/Create'
 
 function App() {
 
@@ -157,16 +159,20 @@ function App() {
   // disable right click
   window.addEventListener("contextmenu", (e) => e.preventDefault());
   window.addEventListener("keydown", (e) => {
-    if (e.keyCode == 123) e.preventDefault();
+    if (e.keyCode === 123) e.preventDefault();
     if (e.ctrlKey && e.shiftKey && e.keyCode === 73) e.preventDefault();
     if (e.ctrlKey && e.shiftKey && e.keyCode === 74) e.preventDefault();
   });
 
   return (
     <>
-      <Header />
+      <Header /> 
+      <br></br>
+      <br></br>
+      <br></br>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/create" element={<Create />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
@@ -175,6 +181,8 @@ function App() {
         <Route path="/products/:keyword" element={<Products />} />
 
         <Route path="/cart" element={<Cart />} />
+
+
         <Route path="/dashboard" element={<Dashboarde/>} />
  
         {/* order process */}

@@ -12,6 +12,8 @@ import { saveShippingInfo } from '../../actions/cartAction';
 import { useNavigate } from 'react-router-dom';
 import MetaData from '../Layouts/MetaData';
 import states from '../../utils/states';
+import countrys from '../../utils/Country';
+
 
 const Shipping = () => {
 
@@ -42,7 +44,7 @@ const Shipping = () => {
 
     return (
         <>
-            <MetaData title="Flipkart: Shipping Details" />
+            <MetaData title="Bhandari Platforms: Shipping Details" />
             <main className="w-full mt-20">
 
                 {/* <!-- row --> */}
@@ -104,7 +106,7 @@ const Shipping = () => {
 
                                     <div className="flex gap-6">
 
-                                        <FormControl fullWidth>
+                                        {/* <FormControl fullWidth>
                                             <InputLabel id="country-select">Country</InputLabel>
                                             <Select
                                                 labelId="country-select"
@@ -114,7 +116,28 @@ const Shipping = () => {
                                                 label="Country"
                                                 // onChange={(e) => setCountry(e.target.value)}
                                             >
-                                                <MenuItem value={'IN'}>India</MenuItem>
+                                                {
+                                                    Country.map((item)=>(
+                                                        <MenuItem key = {item.code} value = {item.code}>{item.name}</MenuItem>
+                                                    ))
+                                                }
+                                                {/* <MenuItem value={'IN'}>India</MenuItem> */}
+                                        {/* </Select>
+                                        </FormControl> */}
+
+                                        <FormControl fullWidth >
+                                            <InputLabel id="country-select">Country</InputLabel>
+                                            <Select
+                                                labelId="country-select"
+                                                id="country-select"
+                                                value={country}
+                                                label="Country"
+                                                onChange={(e) => setState(e.target.value)}
+                                                required
+                                            >
+                                                {countrys.map((item) => (
+                                                    <MenuItem key={item.code} value={item.code}>{item.name}</MenuItem>
+                                                ))}
                                             </Select>
                                         </FormControl>
 

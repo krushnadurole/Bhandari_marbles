@@ -118,6 +118,8 @@ import UpdateUser from './components/Admin/UpdateUser';
 import ReviewsTable from './components/Admin/ReviewsTable';
 import Wishlist from './components/Wishlist/Wihlist';
 import NotFound from './components/NotFound';
+import Dashboarde from './components/Home/Dashboard';
+import './components/Home/Home.css'
 
 function App() {
 
@@ -173,6 +175,7 @@ function App() {
         <Route path="/products/:keyword" element={<Products />} />
 
         <Route path="/cart" element={<Cart />} />
+        <Route path="/dashboard" element={<Dashboarde/>} />
  
         {/* order process */}
         <Route path="/shipping" element={

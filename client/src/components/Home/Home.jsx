@@ -103,6 +103,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { clearErrors, getSliderProducts } from '../../actions/productAction';
 import { useSnackbar } from 'notistack';
 import MetaData from '../Layouts/MetaData';
+import './Home.css'
 
 const Home = () => {
 
@@ -121,8 +122,10 @@ const Home = () => {
 
   return (
     <>
-      <MetaData title="Bhandari marbles - Online Shopping site for Marbles"/>
+     <div>
+     <MetaData title="Bhandari marbles - Online Shopping site for Marbles"/>
       <Categories />
+      {/* <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> */}
       <main className="flex flex-col gap-3 px-2 mt-16 sm:mt-2">
         <Banner />
         <DealSlider title={"Discounts for You"} />
@@ -132,6 +135,7 @@ const Home = () => {
         <DealSlider title={"Top Offers On"} />
         {!loading && <ProductSlider title={"Don't Miss These!"} tagline={"Inspired by your order"} />}
       </main>
+     </div>
     </>
   );
 };
